@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Animated Live Wall
  * Description: The Animated Live Wall Gallery is a responsive animated gallery that helps to makes beutiful your WordPress site.
- * Version: 1.2.5
+ * Version: 1.2.6
  * Author: A WP Life
  * Plugin URI:
  * Author URI: https://www.awplife.com
@@ -27,13 +27,13 @@ if ( ! class_exists( 'Awl_Photo_Wall' ) ) {
 
 		protected function _constants() {
 			// Plugin Version
-			define( 'ALW_PLUGIN_VER', '1.2.5' );
+			define( 'ALW_PLUGIN_VER', '1.2.6' );
 
 			// Plugin Text Domain
 			define( 'ALW_TXTDM', 'animated-live-wall' );
 
 			// Plugin Name
-			define( 'ALW_PLUGIN_NAME', __( 'Animated Live Wall Premium', 'animated-live-wall' ) );
+			define( 'ALW_PLUGIN_NAME', 'Animated Live Wall Premium');
 
 			// Plugin Slug
 			define( 'ALW_PLUGIN_SLUG', 'animated-live-wall' );
@@ -51,7 +51,7 @@ if ( ! class_exists( 'Awl_Photo_Wall' ) ) {
 		protected function _hooks() {
 
 			// Load text domain
-			add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
+			add_action( 'init', array( $this, 'load_textdomain' ) );
 
 			// add gallery menu item, change menu filter for multi-site
 			add_action( 'admin_menu', array( $this, 'alw_menu' ), 101 );

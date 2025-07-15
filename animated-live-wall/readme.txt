@@ -5,7 +5,7 @@ Tags: instagram, flickr, gallery, image masonry design, animation wall
 Requires at least: 3.0.1
 Tested up to: 6.8.1
 Requires PHP: 5.2.4
-Stable tag: 1.2.5
+Stable tag: 1.2.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
  
@@ -218,6 +218,10 @@ If you still face any issues **[get in contact](https://www.awplife.com/contact/
 
 == Changelog ==
  
+= 1.2.6 =
+
+* Text domain warning fixed.
+
 = 1.2.5 =
 
 * Bug Fix: Fixed.
