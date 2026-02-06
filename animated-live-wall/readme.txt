@@ -1,186 +1,108 @@
-=== Animated Live Wall - Photo Animation, Feed Gallery Image Change Animation ===
+=== Animated Live Wall Gallery ===
 Contributors: awordpresslife, razipathhan, hanif0991, muhammadshahid, fkfaisalkhan007, sharikkhan007, zishlife, FARAZFRANK
 Donate link: https://paypal.me/awplife
-Tags: instagram, flickr, gallery, image masonry design, animation wall
+Tags: gallery, animated gallery, image gallery, masonry gallery, photo wall
 Requires at least: 3.0.1
-Tested up to: 6.8.1
+Tested up to: 6.9
 Requires PHP: 5.2.4
-Stable tag: 1.2.6
+Stable tag: 1.2.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
- 
-Animated live wall gallery creates a dynamic photo wall with animated blocks from Instagram, Flickr, or uploaded media.
- 
+
+Create animated gallery walls with image-switching effects. Display photos from Instagram, Flickr, or media uploads.
+
 == Description ==
 
-If you want to show your artwork or Instagram & Flickr Feed with a great looking animated gallery or you want to display your photo feeds from social platforms like Instagram and Flickr then Animated live wall is a perfect solution for you. It can show your Album of feed on any page with an eye catchy animated layout.
-The animated live wall can create animated switching photos with CSS animation like fade, scale, hide show with a specific time interval.
-You can also show your Instagram gallery or Flickr feed with masonry layout. 
+Animated Live Wall lets you build stunning gallery walls where images switch and animate with smooth CSS effects. Whether you want to showcase your artwork, display an Instagram feed, or create an eye-catching Flickr gallery, this gallery tool makes it simple.
+
+**Free Version Demo:** **[Animated Live Wall Gallery](https://awplife.com/demo/animated-live-wall-free-wordpress-plugin/)** 
+**Pro Version Demo:** **[Animated Live Wall Gallery Premium](https://awplife.com/demo/animated-live-wall-premium/)**
+**More About Pro:** **[Check Pro Details](https://awplife.com/wordpress-plugins/animated-live-wall-premium/)** 
+**Where To Buy:** **[Buy Animated Live Wall Gallery Premium](https://awplife.com/wordpress-plugins/animated-live-wall-premium/)**
 
 https://www.youtube.com/watch?v=27nMZma9x78
 
-Animated live wall also comes with a beautiful Lightbox which can show your gallery in a larger popup mode.
+The gallery supports both grid and masonry layouts, giving you flexibility in how your photos appear on the page. Each gallery comes with a built-in lightbox for full-size image viewing, and the entire design adapts smoothly to different screen sizes.
 
-Animated live wall is a great responsive gallery that works according to your devices display resolution i.e. it can adjust its size automatically according to screen size. The plugin allows you to select from different thumbnail sizes and column sizes. Not only images, but you can also add video, text, and link to your animated wall. 
+= Free Features =
 
-This Wordpress plugin allows you to change image titles with ease, you can also select from "gap" and "no gap" option to display or hide spaces between your media. Custom CSS field is also provided for advanced users so they can make changes according to yo their requirement and needs. 
+* Unlimited gallery images and videos
+* Grid layout with animated image switching
+* Masonry layout for varied image sizes
+* Smooth CSS animation effects (fade, scale, hide/show)
+* Built-in responsive lightbox
+* Instagram feed integration
+* Flickr feed integration
+* Adjustable column layouts
+* Multiple thumbnail size options
+* Gap control between images
+* Custom image titles
+* Link option for images (same or new window)
+* Loading icon/preloader
+* Custom CSS field for advanced styling
+* Shortcode support for easy embedding
 
-* [Free Version Demo](https://awplife.com/demo/animated-live-wall-free-wordpress-plugin/)
-* [Pro Version Demo](https://awplife.com/demo/animated-live-wall-premium/)
-* [Upgrade](https://awplife.com/wordpress-plugins/animated-live-wall-premium/)
-* [Support](https://wordpress.org/support/plugin/animated-live-wall)
+= Pro Features =
 
-**Plugin Features:**
+* All free features included
+* Grid layout with 15+ animation effects
+* Mosaic layout option
+* Justify layout option
+* Animation speed control
+* Animation interval settings
+* Max step control (animate 1-100 photos at a time)
+* Set specific images to never switch
+* Gap range from 0 to 15px
+* Fixed square cropped images for lightbox
+* Instagram caption display on photos
+* Instagram icon overlay on photos
+* Ajax load more pagination
+* Customizable load more button colors
+* Enhanced loading performance
 
-* Add unlimited amount of gallery content
-* Image / video option for gallery content / project
-* Grid and Masonry views 
-* Multiple switching image animation options
-* Fully responsive
-* Loading icon
-* Title option
-* Lightbox option
-* Photo/video URLs
-* Column layout option
-* Thumbnail / Image size option
-* Gap option between images
-* Link redirection option
-* Add photo galleries to a Post/Page with short-code
-* Instagram feed option
-* Flickr feed option
-* Social redirection option
-* Beautiful user interface
-* Custom CSS field
-* Fast & friendly support
+= Gallery Layouts =
 
-**Pro Feature**
+**Grid Layout**
+The grid layout arranges images in uniform rows and columns with matching sizes. When your gallery has more images than grid cells, the remaining photos cycle through the grid with animation effects. For example, a 5x4 grid with 50 images will display 20 at a time while the other 30 rotate in randomly.
 
-* Fully responsive - compatible with all devices 
-* Multiple Layout with Mosaic and Masonry
-* Grid - Live switching animation - +15 animation effect 
-* Grid - Max Step (Choose how many photos you want to animate at a time ( grid layout ) Range 1 to 100)
-* Grid - Animation speed ( Change animation speed of switching the photos)
-* Grid - Animation interval of changing the photos 
-* Grid - No change photos (You can set the images by there ID that never be switched)
-* Change the image gap with a range between 0 to 15px
-* Fixed square cropped Images option for lightbox 
-* Column layout
-* Thumbnail Size option
-* Hover effect - Beautiful hover effect with great transition
-* Multi Layout option with Instagram & Flickr feed
-* Preloader effect 
-* Load More option 
-* Fast loading on the page
-* Show your portfolio also
-* Loading limit option available
+**Masonry Layout**
+Masonry positions images in a Pinterest-style vertical arrangement. Images flow naturally without fixed row heights, making efficient use of page space. This layout works well for photos with different aspect ratios.
 
-**Animation Grid Live**
-
-Showcase your images with a great looking animated grid gallery that switches images with a specific time interval. Animated live wall gallery sets a list of images and defines the number of columns and rows which arrange the images into a grid layout.
-This grid changes its objects with different animation effects like fade, scale, hide show. In the live animated grid, gallery sets images in a grid layout or masonry arrangement that can resize itself according to your devices.
-
-When you create your photo gallery with a greater number of images than your grid size, an animated gallery will be created according to row and columns you select and remaining images will be left to be switched with elements of the grid. That means if you have 50 images and define a 5x4 grid, the remaining 30 images will replace your grid images randomly one by one and so on. 
-
-**Multi Layouts**
-
-You can show your image also in masonry layout. Masonry is an arrangement where you can show your images with uneven vertical or horizontal layout. Layout option will also work with Instagram and Flickr feed
+= Social Feed Integration =
 
 **Instagram Feed**
+Connect your Instagram account and display your feed directly on any page. The gallery fetches your Instagram photos automatically and displays them in your chosen layout style.
 
 https://www.youtube.com/watch?v=IEXDGIeIq_8
 
-Instagram Feed is a place where you can share and connect with the people and things you care about. When you open Instagram or refresh your feed, the photos and videos we think you care about most will appear towards the top of your feed. ... All posts from accounts you follow on Instagram will appear in your feed.
-Showcase your Instagram feed easily with Animated live wall, it automatically fetches your Instagram feed to your page. It can show your Instagram feed with your desirable layouts like grid or masonry.
-You will find the easiest way to show your Instagram feed in the animated live wall, You can easily generate access token with Pixel Union, 
-After generating access token save and publish your gallery and you can show your Instagram stories in a beautiful way.
-
-
 **Flickr Feed**
+Pull your Flickr photos into the gallery using your API key and user ID. Display your Flickr albums in grid or masonry format with full lightbox support.
 
-Animated live wall can automatically fetch your Flickr feed to any page you want just with the help of shortcode. You can show your Flickr feed with your desirable layouts like grid or masonry.
-If you want to show your Flickr as an animated wall or in other layouts of the gallery. You need your Flickr API key and your Flickr user ID. You can generate your API key and get Flickr user Id with an easy way step by step
-with our blogs. After generated both user ID and API key you need to save it with gallery and show your Flickr feed.
+= Lightbox =
 
-**Lightbox**
+Every gallery includes a responsive lightbox that opens images in a larger popup view. The lightbox supports keyboard navigation, transition effects, and also plays YouTube and Vimeo videos. Navigation arrows let visitors browse through the entire gallery without closing the popup.
 
-Animated live wall comes with a great looking and responsive Lightbox. Litebox helps the user to display a larger view of the image with a popup. In the lightbox, you can show your images in a beautiful way and
-you can also show your Youtube or Vimeo videos. In the gallery Lightbox, it is a responsive lightbox and it has the transition type. Can be set to "elastic", "fade", or "none". It has both navigation right and left
-and it can also be navigated by the keyboard key. This lightbox is also great for Instagram and Flickr feed.
+= Shortcode Usage =
 
-**Link Option**
+After creating your gallery, simply copy the shortcode and paste it into any page, post, or text widget. The gallery appears wherever you place the shortcode.
 
-Animated gallery have also "link" option so you can display an external link to your project with your image. You will get the option to open the link into the same or a new window. You can link the images and open with the Lightbox with the same gallery. The links of Instagram and Flickr will automatically work.
+== Installation ==
 
-**Grid**
+**From Your Dashboard:**
 
-The grid layout is a really popular layout you can show your gallery with a square shape (same image size). It gives a great layout for your gallery. you can set rows and column from the settings. you can also set the spacing limit from the setting.
-The grid is fully responsive that work according to the device type. With responsive, it feels more attractive with a small device. You can also set the image quality of your photos. If you have many photos to show and the gallery takes more time to load because of the high-resolution image then you can set low-resolution photos to fast loading. In the pro version of Animated gallery, you can set pre cropping images also. 
-If you want to show your Instagram and Flickr work then it will the best plugin with grid layout.
+1. Go to Plugins > Add New
+2. Search for "Animated Live Wall"
+3. Click Install and then Activate
+4. Find the gallery menu in your dashboard
 
-**Masonry**  
-
-Masonry is also a great layout to show your photos and it positions the image in vertical space. Masonry layout is also a popular layout of them in the gallery. You can also set the spacing between photos and the column size.
-Masonry is responsive it sets images according to the device width.
-The term Masonry layout probably owes its name to the popular jQuery Masonry plugin that is used to generate this type of layout. Masonry layout is also referred to as the Pinterest Style Layout, as www.pinterest.com was the first major website to use this layout style.
-Animated gallery masonry is a grid layout based on columns. Unlike other grid layouts, it doesn’t have fixed height rows. Basically, the Masonry layout optimizes the use of space inside the web page by reducing any unnecessary gaps. Without this type of layout, certain restrictions are required to maintain the structure of the layout.
-Developers and designers are accustomed to seeing web pages laid out with CSS floats. But this common type of layout doesn’t take the size of the elements into consideration. Instead, it adds elements one after another, first in the horizontal direction, then vertically.
-
-**Load More**
-
-Animated gallery wall plugin has ajax load more option that loads the images or content with a specific limit that user sets. 
-AJAX stands for Asynchronous JavaScript and XML. It is a jquery feature used to make webpages faster to use. If they are programmed with AJAX, 
-they seem to react faster. They only send small bits of information to the web server. 
-That prevent to reload the pages and loads only small parts of it. 
-For Instagram and Flickr feed you will find vwery useful ajax load more for save loading time if you have thousends of photos.
-
-**Load More Button**
-
-You have the option to change the color of the load more button. If you want to more changes then you can change it with the custom CSS option. You will also get a preloader icon with this plugin.
-
-**How It WOrks**
-
-Animated grid wall is a cross-browser and responsive plugin to help you create many types of grid layouts with nice CSS3 animation effects and call back events. 
-this plugin is an all-in-one solution for creating dynamic grid layouts for desktop, mobile, and tablet.
-Based on the width (or height) of a container and the width (height) of a cell unit, It will create a virtual matrix. 
-Scanning the matrix at each cell will find a free cell around to make a free area, then try to fit a block element into it. 
-In case no block can fit the gap, it will resize the block to fill the gap (that is one of the options).
-
-**SHORTCODE**
-
-Animated Wall Gallery offers an easy-to-use Insert Gallery, which means you never need to work with shortcodes again when inserting and manageing galleries. You just need to copy and paste gallery shortcode into the gallery.
-It does't matter wahat you want to show a gallery or your Instagram feed or Flickr Feed.
-If you do want to work with shortcodes, there is a powerful shortcode system as you’d expect of a popular WordPress gallery plugin.
-For more information, feel free to visit the official website for animated live wall gallery.
-
-**WORLD CLASS CUSTOMER SUPPORT**
-
-Low response time
-We always try to respond within hours or within a day.
-Resolving an issue within 24 hours.
-
-### WordPress Dashboard:
-
-Install Animated Live Wall Plugin with the following steps-
-
-* 1. From Your Dashboard Go To Plugins 
-* 2. Search for  “Animated Live Wall” after clicking on “Add  New” button
-* 3. Install the plugin
-* 4. Activate it right away
-* 5. And find the plugin on your dashboard.
-
-After these steps, you can make your desirable gallery/project in a few clicks 
 **From WordPress.org:**
 
-Installation from WordPress.org
+1. Download the zip file from WordPress.org
+2. Upload to your /wp-content/plugins/ directory
+3. Activate the plugin from the Plugins page
 
-* 1. Download Animated Live Wall on WordPress
-* 2. Upload to your plugin directory
-* 3. Activate from the Plugin page 
+Need help? [Contact us here](https://www.awplife.com/contact/).
 
-Now you are ready to use Animated Live Wall plugin
-
-If you still face any issues **[get in contact](https://www.awplife.com/contact/)** with us.
- 
 == Screenshots ==
 
 1. Live Animation
@@ -192,255 +114,89 @@ If you still face any issues **[get in contact](https://www.awplife.com/contact/
 
 == Frequently Asked Questions ==
 
-= How to add animated galleries to a post or page? =
+= How do I add a gallery to my page? =
 
-* After creating your gallery you will find copy shortcode option. Copy shortcode and just paste it to your page or post to show gallery.
+After creating your gallery, copy the shortcode shown in the gallery settings. Paste this shortcode into any page, post, or text widget where you want the gallery to appear.
 
-= How many images and videos can be added to the gallery? =
+= How many images can I add? =
 
-* Animated live Wall doesn’t have the limit for images and videos. You are able to add an unlimited amount of photos to your projects.
+There is no limit. You can add as many images and videos as you need to each gallery.
 
-= Can I change the sequence of images in the gallery? =
+= Can I rearrange the image order? =
 
-* When you create a gallery you can see drag and drop option for images so you can drag and drop images to get your desirable gallery.
+Yes. When editing a gallery, you can drag and drop images to change their order.
 
-= Is Photo Gallery responsive? =
+= Is the gallery mobile responsive? =
 
-* Animated Live Wall Gallery plugin has fully responsive design and layout. It is designed to display all of its views and react with your device smoothly.
+Yes. The gallery automatically adjusts its layout based on screen size and works smoothly on phones, tablets, and desktops.
 
-= Can I add URL links to the image? =
+= Can I add links to images? =
 
-* Yes, you can add the links to images. you can find the link option under the image when you will upload.
+Yes. Each image has a link field where you can add a URL. You can choose whether links open in the same window or a new tab.
 
-= How do I Publish galleries on pages or posts? =
+= What gallery layouts are available? =
 
-* Open the post/page you want to display the gallery. Paste your gallery shortcode into text editor and press plublish button to show your gallery or Instagram feed. You can also show the gallery in widget like page or post just paste your shortcode into text widget and your gallery is ready to show.
+The free version includes Grid and Masonry layouts. The Pro version adds Mosaic and Justify layouts.
+
+= How do I connect my Instagram account? =
+
+In the gallery settings, select Instagram as your source. Generate an access token using Pixel Union, enter it in the settings, and save your gallery.
+
+= How do I set up my Flickr feed? =
+
+You need your Flickr API key and user ID. Enter both in the gallery Flickr settings section. Our documentation walks you through getting these credentials.
+
+= What animation effects are available? =
+
+The free version includes fade, scale, and hide/show effects. The Pro version offers 15+ additional animation styles.
+
+= Can I control the animation timing? =
+
+In the Pro version, you can adjust both animation speed and the interval between image switches.
+
+= Does the gallery support video? =
+
+Yes. You can add YouTube and Vimeo videos to your gallery. Videos play inside the lightbox popup.
+
+= What is the difference between Free and Pro? =
+
+The free version covers core functionality: grid/masonry layouts, Instagram/Flickr feeds, lightbox, and basic animations. The Pro version adds more layouts (mosaic, justify), advanced animation controls, load more pagination, and additional styling options. [See full comparison](https://awplife.com/wordpress-plugins/animated-live-wall-premium/)
+
+= Can I use custom CSS? =
+
+Yes. Each gallery has a custom CSS field where you can add your own styling rules.
+
+= How do I get support? =
+
+For free version support, use the [WordPress.org support forum](https://wordpress.org/support/plugin/animated-live-wall). Pro users can contact us directly through our website.
 
 == Changelog ==
- 
+
+= 1.2.7 =
+
+* Tested plugin for WordPress 6.9
+
 = 1.2.6 =
 
 * Text domain warning fixed.
+* Tested plugin for WordPress 6.8.1
 
 = 1.2.5 =
 
 * Bug Fix: Fixed.
-* Testing plugin for wordpress 6.8.1
 
 = 1.2.4 =
 
 * Bug Fix: Fixed.
-* Testing plugin for wordpress 6.7.2
 
 = 1.2.3 =
 
 * Bug Fix: Fixed.
-* Testing plugin for wordpress 6.7.1
 
 = 1.2.2 =
 
 * Bug Fix: Fixed.
-* Testing plugin for wordpress 6.6.2
 
-= 1.2.1 =
+== Upgrade Notice ==
 
-* Testing plugin for wordpress 6.6.2
-
-= 1.2.0 =
-
-* Testing plugin for wordpress 6.6.1
-
-= 1.1.9 =
-
-* Bug Fix: Fixed.
-* Additional changes: None.
-* Testing plugin for wordpress 6.5.4
-
-= 1.1.8 =
-
-* Bug Fix: Fixed.
-* Additional changes: None.
-* Testing plugin for wordpress 6.5.2
-
-= 1.1.7 =
-
-* Bug Fix: Fixed.
-* Additional changes: None.
-* Testing plugin for wordpress 6.4.3
-
-= 1.1.6 =
-
-* Bug Fix: Fixed.
-* Additional changes: None.
-* Testing plugin for wordpress 6.4.2
-
-= 1.1.5 =
-
-* Bug Fix: Fixed.
-* Additional changes: None.
-* Testing plugin for wordpress 6.4.2
-
-= 1.1.4 =
-
-* Tested with wordpress 6.3.2
-* Image clickable issue fixed.
-* Lightbox large image preview fixed.
-
-= 1.1.3 =
-
-* Tested with wordpress 6.3.2
-
-= 1.1.2 =
-
-* Tested with wordpress 6.3.1
-
-= 1.1.1 =
-
-* Tested with wordpress 6.2.2
-
-= 1.1.0 =
-
-* Tested with wordpress 6.2.1
-* Custom CSS fixed.
-
-= 1.0.31 =
-
-* Tested with wordpress 6.2.1
-* Codding Bugs Fixed.
-
-= 1.0.30 =
-
-* Tested with wordpress 6.1.1
- 
-= 1.0.29 =
-
-* Tested with wordpress 6.0.3
-* Instagram Feed working now.
-* Codding Bugs Fixed.
-
-= 1.0.28 =
-
-* Enhancements: checked with wordpress 6.0.1
-* Instagram Feed working now.
-
-= 1.0.27 =
-
-* Fixed Security issues.
-
-= 1.0.26 =
-
-* Enhancements: checked with wordpress 6.0.1
-
-= 1.0.25 =
-
-* Enhancements: checked with wordpress 5.9.3
-
-= 1.0.24 =
-
-* Enhancements: checked with wordpress 5.9
-
-= 1.0.23 =
-
-* Enhancements: checked with wordpress 5.8.1
-* wordpress security issues fixed
-
-= 1.0.22 =
-
-* Enhancements: checked with wordpress 5.8.1
-
-= 1.0.21 =
-
-* Fixed Security issues
-
-= 1.0.20 =
-
-* Enhancements: checked with wordpress 5.7.2
-* Bug: Miner Issue Fixed.
-
-= 1.0.19 =
-
-* Enhancements: checked with wordpress 5.7.2
-
-= 1.0.18 =
-
-* Enhancements: checked with wordpress 5.7.1
-
-= 1.0.17 =
-
-* Enhancements: checked with wordpress 5.7
-
-= 1.0.16 =
-
-* Enhancements: checked with wordpress 5.6.2
-
-= 1.0.15 =
-
-* Enhancements: checked with wordpress 5.6
-* Fixed jquery undefined issue
-
-= 1.0.14 =
-
-* Enhancements: checked with wordpress 5.5.3
-
-= 1.0.13 =
-
-* Enhancements: Yes, checked with wordpress 5.5.3
-
-= 1.0.12 =
-
-* Enhancements: Yes, checked with wordpress 5.5.1
-
-= 1.0.11 =
-
-* Enhancements: Yes, checked with wordpress 5.5
-* Bug: Miner Issue Fixed.
-
-= 1.0.10 =
-
-* Enhancements: Yes, checked with wordpress 5.4.1
-
-= 1.0.9 =
-
-* Fix coulmn issue with small device
-
-= 1.0.8 =
-
-* Fix coulmn issue with small device
-
-= 1.0.7 =
-
-* Enhancements: Yes, checked with wordpress 5.3.2
-
-
-= 1.0.6 =
-
-* Fixed toggle issue with options 
-* Fixed Gap issue with images
-
-= 1.0.5 =
-
-* Enhancements: Yes, checked with wordpress 5.2.3
-
-= 1.0.4 =
-
-* Bug Fixed
-
-= 1.0.3 =
-
-* Add option for stop animation in grid 
-* Preloader option for both layout
-
-= 1.0.2 =
-
-* Enhancements: Yes, checked for wordpress 5.2.1
-* Bug Fix: Fixed.
-* Additional changes: None.
-
-= 1.0.1 =
-
-* Add video play option (Lightbox) youtube, vimeo
-* Add icons on images
-
-= 1.0.0 =
-
-* Initial release.
+* No Major update yet.
