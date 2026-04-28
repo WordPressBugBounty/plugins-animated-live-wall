@@ -195,24 +195,19 @@ function awl_alw_shortcode( $post_id ) {
 		$alw_custum_css = '';
 	}
 
-	// lod button css
-	?>
-	<style>
+	$dynamic_css = "
 	.progress-button button {
-		border: 2px solid <?php echo esc_attr( $alw_load_more_color ); ?>;
-		color: <?php echo esc_attr( $alw_load_more_color ); ?>
+		border: 2px solid " . esc_attr( $alw_load_more_color ) . ";
+		color: " . esc_attr( $alw_load_more_color ) . "
 	}
 	.progress-button button:hover {
-		background-color: <?php echo esc_attr( $alw_load_more_color ); ?>
+		background-color: " . esc_attr( $alw_load_more_color ) . "
 	}
 	.ri-grid ul li {
-		margin: <?php echo esc_attr( $alw_grid_gap ); ?>px !important;
+		margin: " . esc_attr( $alw_grid_gap ) . "px !important;
 	}
-	
-	<?php echo $alw_custum_css; ?>
-	
-	</style>
-	<?php
+	" . wp_strip_all_tags( $alw_custum_css );
+	wp_add_inline_style( 'alw-style-css', $dynamic_css );
 	// get id
 	$alw_id = $post_id['id'];
 
@@ -225,16 +220,24 @@ function awl_alw_shortcode( $post_id ) {
 		}
 	}
 	if ( $alw_gallery_wall == 'insta_wall' ) {
-
 		// get instagram api
-		$instagram_data_decode = file_get_contents( "https://graph.instagram.com/me/media?fields=id,thumbnail_url,permalink,media_type,media_url,caption,username,children{media_url}&access_token=$alw_instagram_token" );
-		$instagram_data        = json_decode( $instagram_data_decode, true );
-		
-		
-		/*  echo "<pre>";
-		print_r($instagram_data);
-		echo "</pre>";  */
-		
+		$cache_key             = 'alw_insta_cache_' . $alw_id;
+		$instagram_data_decode = get_transient( $cache_key );
+
+		if ( false === $instagram_data_decode ) {
+			$response = wp_remote_get( "https://graph.instagram.com/me/media?fields=id,thumbnail_url,permalink,media_type,media_url,caption,username,children{media_url}&access_token=$alw_instagram_token", array( 'timeout' => 20 ) );
+			if ( is_wp_error( $response ) ) {
+				$instagram_data_decode = '';
+			} else {
+				$instagram_data_decode = wp_remote_retrieve_body( $response );
+				if ( ! empty( $instagram_data_decode ) ) {
+					set_transient( $cache_key, $instagram_data_decode, 12 * HOUR_IN_SECONDS );
+				}
+			}
+		}
+		$instagram_data = json_decode( $instagram_data_decode, true );
+
+
 		// require layout
 		if ( $enable_gallery_layout == 'grid' ) {
 			require 'include/instagram-gallery/alw-instagram-grid-animated-shortcode.php';
@@ -244,15 +247,15 @@ function awl_alw_shortcode( $post_id ) {
 		}
 	}
 	if ( $alw_gallery_wall == 'flickr_wall' ) {
-
 		// get flickr api
 		$params = array(
 			'api_key'  => $alw_flickr_api_key,
 			'user_id'  => $alw_flickr_user_id,
 			'method'   => 'flickr.people.getPublicPhotos',
 			'per_page' => 50,
-			'format'   => 'php_serial',
-			'extras'   => 'date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags, o_dims, views, media, path_alias, url, url_sq, url_q, url_t, url_s, url_n, url_m, url_z, url_c, url_l, url_o',
+			'format'         => 'json',
+			'nojsoncallback' => 1,
+			'extras'         => 'date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags, o_dims, views, media, path_alias, url, url_sq, url_q, url_t, url_s, url_n, url_m, url_z, url_c, url_l, url_o',
 		);
 
 		$encoded_params = array();
@@ -261,17 +264,34 @@ function awl_alw_shortcode( $post_id ) {
 		}
 
 		// call the API and decode the response
-		$url     = 'https://api.flickr.com/services/rest/?' . implode( '&', $encoded_params );
-		$rsp     = file_get_contents( $url );
-		$rsp_obj = unserialize( $rsp );
+		$url       = 'https://api.flickr.com/services/rest/?' . implode( '&', $encoded_params );
+		$cache_key = 'alw_flickr_cache_' . $alw_id;
+		$rsp       = get_transient( $cache_key );
+
+		if ( false === $rsp ) {
+			$response = wp_remote_get( $url, array( 'timeout' => 20 ) );
+			if ( is_wp_error( $response ) ) {
+				$rsp = '';
+			} else {
+				$rsp = wp_remote_retrieve_body( $response );
+				if ( ! empty( $rsp ) ) {
+					set_transient( $cache_key, $rsp, 12 * HOUR_IN_SECONDS );
+				}
+			}
+		}
+
+		if ( ! empty( $rsp ) ) {
+			// Using unserialize on external data is risky, but for now we follow the existing logic with safer retrieval
+			$rsp_obj = json_decode( $rsp, true );
+		} else {
+			$rsp_obj = array();
+		}
 
 		if ( isset( $rsp_obj['photos']['photo'] ) ) {
 			$flickr_data = $rsp_obj['photos']['photo'];
 		} else {
 			$flickr_data = '';
 		}
-
-		// $flickr_data = $rsp_obj['photos']['photo'];
 
 		// require layout
 		if ( isset( $rsp_obj['photos']['photo'] ) ) {

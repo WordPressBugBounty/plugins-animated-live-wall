@@ -78,7 +78,7 @@ while ( $loop->have_posts() ) :
 				
 				?>
 				<div class="brick">
-					<a class='grid <?php echo $lightboxop; ?>' target='<?php echo esc_attr( $alw_maso_img_redirection ); ?>' href='<?php echo esc_url( $link_url ); ?>'>
+					<a class='grid <?php echo esc_attr( $lightboxop ); ?>' target='<?php echo esc_attr( $alw_maso_img_redirection ); ?>' href='<?php echo esc_url( $link_url ); ?>'>
 						<div class='snip1467'><img src='<?php if ( $insta_media_type == 'VIDEO' ) { echo esc_url( $thumbnail_video_image ); } else { echo esc_url( $thumbnail_url );} ?>' width='100%'>
 							<?php if ( $insta_media_type == 'VIDEO' ) { ?>
 							<span class='instagram-video fas fa-video'></span>
@@ -88,7 +88,7 @@ while ( $loop->have_posts() ) :
 								echo "<i class='pw-instagram fab fa-instagram'></i>";
 							} ?>
 							<figcaption>
-								<p class="pw-caption"><?php echo $insta_photos_caption; ?></p>
+								<p class="pw-caption"><?php echo esc_html( $insta_photos_caption ); ?></p>
 							</figcaption>
 								
 						</div>

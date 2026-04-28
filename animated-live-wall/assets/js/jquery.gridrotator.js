@@ -281,23 +281,25 @@
 			$outItems.remove();
 
 				// container's width
-			var containerWidth = ( document.defaultView ) ? parseInt( document.defaultView.getComputedStyle( this.$el.get( 0 ), null ).width ) : this.$el.width(),
+			var containerWidth = (document.defaultView) ? parseInt(document.defaultView.getComputedStyle(this.$el.get(0), null).width) : this.$el.width(),
 				// item's width
-				itemWidth = Math.floor( containerWidth / this.columns ),
+				itemWidth = Math.floor(containerWidth / this.columns),
 				// calculate gap
-				gapWidth = containerWidth - ( this.columns * Math.floor( itemWidth ) );
-
-			for( var i = 0; i < this.rows; ++i ) {
-
-				for( var j = 0; j < this.columns; ++j ) {
-
+				gapWidth = containerWidth - (this.columns * Math.floor(itemWidth));
+			// Detect margin
+			var $firstItem = this.$items.eq(0);
+			var margin = parseFloat($firstItem.css('margin-left')) + parseFloat($firstItem.css('margin-right'));
+			// Adjust itemWidth by subtracting the margin
+			itemWidth = itemWidth - margin;
+			
+			for (var i = 0; i < this.rows; ++i) {
+				for (var j = 0; j < this.columns; ++j) {
 					var idx = this.columns * i + j,
-						$item = this.$items.eq( idx );
-
-					$item.css( {
-						width : j < Math.floor( gapWidth ) ? itemWidth + 1 : itemWidth,
-						height : itemWidth
-					} );
+						$item = this.$items.eq(idx);
+					$item.css({
+						width: j < Math.floor(gapWidth) ? itemWidth + 1 : itemWidth,
+						height: itemWidth
+					});
 
 					if( $.inArray( idx, this.options.nochange ) !== -1 ) {
 						$item.addClass( 'ri-nochange' ).data( 'nochange', true );

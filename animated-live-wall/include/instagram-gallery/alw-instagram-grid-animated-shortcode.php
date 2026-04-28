@@ -54,7 +54,7 @@ while ( $loop->have_posts() ) :
 					
 					?>
 					<li class="brick">
-						<a class="snip1467 <?php echo $lightboxop; ?>" href="<?php echo esc_url( $link_url ); ?>" rel="next img-wrapper" target="<?php echo esc_attr( $alw_maso_img_redirection ); ?>">
+						<a class="snip1467 <?php echo esc_attr( $lightboxop ); ?>" href="<?php echo esc_url( $link_url ); ?>" rel="next img-wrapper" target="<?php echo esc_attr( $alw_maso_img_redirection ); ?>">
 							<img src='<?php if ( $insta_media_type == 'VIDEO' ) { echo esc_url( $thumbnail_video_image ); } else { echo esc_url( $thumbnail_url );} ?>'>
 							<?php if ( $insta_media_type == 'VIDEO' ) { ?>
 							<span class='instagram-video fas fa-video'></span>
@@ -64,10 +64,11 @@ while ( $loop->have_posts() ) :
 								echo "<i class='pw-instagram fab fa-instagram'></i>";
 							} ?>
 							<figcaption>
-								<p class="pw-caption"><?php echo wp_trim_words( $insta_photos_caption, 3 ); ?></p>
+								<p class="pw-caption"><?php echo esc_html( wp_trim_words( $insta_photos_caption, 3 ) ); ?></p>
 							</figcaption>
 						</a>
-					</li>					
+					</li>
+					
 					<?php
 					$no++;
 					$count++;

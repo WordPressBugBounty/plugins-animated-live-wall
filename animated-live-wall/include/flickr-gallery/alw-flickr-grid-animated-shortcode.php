@@ -79,9 +79,8 @@ while ( $loop->have_posts() ) :
 
 					?>
 					<li class="brick">
-						<a class="snip1467" href="https://www.flickr.com/photos/<?php echo esc_attr( $alw_flickr_user_id ); ?>/<?php echo esc_attr( $photo_id ); ?>/">
-							<img src="<?php echo esc_url( $thumbnail_url ); ?>"/>
-							<!--<span class='pw-instagram fas fa-video'></span>-->
+						<a class="snip1467" target="<?php echo esc_attr( $alw_img_redirection ); ?>" href="https://www.flickr.com/photos/<?php echo esc_attr( $alw_flickr_user_id ); ?>/<?php echo esc_attr( $photo_id ); ?>/">
+							<img src="<?php echo esc_url( $thumbnail_url ); ?>" alt="<?php echo esc_attr( $photostream_title_fetch ); ?>"/>
 							<i class='pw-flickr fab fa-flickr'></i>
 						</a>
 					</li>					

@@ -104,7 +104,7 @@ while ( $loop->have_posts() ) :
 						}
 						?>
 						<a href="<?php echo esc_url( $link_url ); ?>" class="<?php echo esc_attr( $lightboxop ); ?> <?php echo esc_attr( $vedio_class ); ?>" rel="next img-wrapper" <?php if ( $image_link_url == '' && $alw_lightbox != 'true' ) { ?> style="pointer-events:none" <?php } ?> target="<?php echo esc_attr( $alw_img_redirection ); ?>">
-							<img src="<?php echo esc_url( $thumbnail_url ); ?>" width="100%" alt="<?php echo esc_html( $title ); ?>"/>
+							<img src="<?php echo esc_url( $thumbnail_url ); ?>" width="100%" alt="<?php echo esc_attr( $title ); ?>"/>
 							<i class="alw-icon <?php echo esc_attr( $video_icon ); ?>"></i>
 						</a>
 					</li>

@@ -2,10 +2,10 @@
 Contributors: awordpresslife, razipathhan, hanif0991, muhammadshahid, fkfaisalkhan007, sharikkhan007, zishlife, FARAZFRANK
 Donate link: https://paypal.me/awplife
 Tags: gallery, animated gallery, image gallery, masonry gallery, photo wall
-Requires at least: 3.0.1
+Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 5.2.4
-Stable tag: 1.2.7
+Stable tag: 1.2.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -171,6 +171,12 @@ Yes. Each gallery has a custom CSS field where you can add your own styling rule
 For free version support, use the [WordPress.org support forum](https://wordpress.org/support/plugin/animated-live-wall). Pro users can contact us directly through our website.
 
 == Changelog ==
+
+= 1.2.8 =
+
+* Fixed image stretching in grid and masonry layouts.
+* Updated gridrotator JS to handle item margins correctly.
+* Enhanced CSS for better image aspect ratio handling using object-fit.
 
 = 1.2.7 =
 

@@ -1,11 +1,5 @@
 <?php
-// CSS
-wp_enqueue_script( 'jquery' );
-wp_enqueue_script( 'alw-color-picker-js', ALW_PLUGIN_URL . 'assets/js/alw-color-picker.js', array( 'jquery', 'wp-color-picker' ), '', true );
-
-wp_enqueue_style( 'alw-metabox-css', ALW_PLUGIN_URL . 'assets/css/metabox.css' );
-wp_enqueue_style( 'wp-color-picker' );
-
+// Settings data
 $alw_get_settings = get_post_meta( $post->ID, 'awl_animated_live_wall' . $post->ID, true );
 
 ?>
@@ -137,10 +131,10 @@ $alw_get_settings = get_post_meta( $post->ID, 'awl_animated_live_wall' . $post->
 								$image_link = $alw_get_settings['image-link'][ $count ];
 								?>
 								<li class="item image col-lg-2 col-md-3 col-sm-6 col-xs-12">
-									<img class="new-image" src="<?php echo esc_url( $thumbnail[0] ); ?>" alt="<?php echo esc_html( get_the_title( $id ) ); ?>" style="height: 150px;">
-									<div class="item-overlay bottom label label-info" style="opacity:0; position:absolute; color: #fff; background-color:#5bc0de; padding:2px;">ID-<?php echo esc_attr( $id ); ?></div>
-									<input type="hidden" id="image-ids[]" name="image-ids[]" value="<?php echo esc_attr( $id ); ?>" />
-									<input type="text" name="image-title[]" id="image-title[]" placeholder="Image Title" value="<?php echo esc_html( get_the_title( $id ) ); ?>">
+									<img class="new-image" src="<?php echo esc_url( $thumbnail[0] ); ?>" alt="<?php echo esc_attr( get_the_title( $id ) ); ?>" style="height: 150px;">
+									<div class="item-overlay bottom label label-info" style="opacity:0; position:absolute; color: #fff; background-color:#5bc0de; padding:2px;">ID-<?php echo absint( $id ); ?></div>
+									<input type="hidden" id="image-ids[]" name="image-ids[]" value="<?php echo absint( $id ); ?>" />
+									<input type="text" name="image-title[]" id="image-title[]" placeholder="Image Title" value="<?php echo esc_attr( get_the_title( $id ) ); ?>">
 									<input type="text" name="image-link[]" id="image-link[]" value="<?php echo esc_url( $image_link ); ?>" placeholder="Video URL / Link URL">
 									<a class="pw-trash-icon" name="remove-image" id="remove-image" href="#"><span class="dashicons dashicons-trash"></span></a>
 								</li>
@@ -170,7 +164,7 @@ $alw_get_settings = get_post_meta( $post->ID, 'awl_animated_live_wall' . $post->
 									$alw_instagram_token = 'IGQVJXZA1dJWUlQUVhFMy1uRU4tM1RJU0tDa1dJTWt0N3FySktYR2FKeUhTSzkwdnFqOXl2UFR2dks2cmpteGNZAazRDUVd1MkhpZAjYzeWZA0ZAkt6NWVFZAUYxeUQ4UURSOEFjZAFZA1V2xIT0FYS1FNcGE0RQZDZD';
 								}
 								?>
-								<textarea class="form-control" id="alw_instagram_token" name="alw_instagram_token"><?php echo esc_attr( $alw_instagram_token ); ?></textarea>
+								<textarea class="form-control" id="alw_instagram_token" name="alw_instagram_token"><?php echo esc_textarea( $alw_instagram_token ); ?></textarea>
 							</div>
 						</div>
 					</div>
@@ -195,7 +189,7 @@ $alw_get_settings = get_post_meta( $post->ID, 'awl_animated_live_wall' . $post->
 									$alw_flickr_api_key = '18abaa5173d6110a5389e3aba05f94e7';
 								}
 								?>
-								<textarea class="form-control" id="alw_flickr_api_key" name="alw_flickr_api_key"><?php echo esc_attr( $alw_flickr_api_key ); ?></textarea>
+								<textarea class="form-control" id="alw_flickr_api_key" name="alw_flickr_api_key"><?php echo esc_textarea( $alw_flickr_api_key ); ?></textarea>
 							</div>
 						</div>
 					</div>
@@ -791,7 +785,7 @@ $alw_get_settings = get_post_meta( $post->ID, 'awl_animated_live_wall' . $post->
 								$alw_custum_css = '';
 							}
 							?>
-							<textarea class="form-control" rows="12" id="alw_custum_css" name="alw_custum_css"><?php echo $alw_custum_css; ?></textarea>
+							<textarea class="form-control" rows="12" id="alw_custum_css" name="alw_custum_css"><?php echo esc_textarea( $alw_custum_css ); ?></textarea>
 						</div>
 					</div>
 				</div>
@@ -839,262 +833,3 @@ $alw_get_settings = get_post_meta( $post->ID, 'awl_animated_live_wall' . $post->
 	// syntax: wp_nonce_field( 'name_of_my_action', 'name_of_nonce_field' );
 	wp_nonce_field( 'alw_save_settings', 'alw_save_nonce' );
 ?>
-<script>
-var alw_gallery_wall = jQuery('[name=alw_gallery_wall]:checked').val();
-if(alw_gallery_wall == 'photo_wall') {
-	jQuery('.photo_wall').addClass("tab-active");
-	jQuery("div.insta_wall").removeClass("tab-active");
-	jQuery("div.flickr_wall").removeClass("tab-active");
-	jQuery('.gallery-content-photo-wall').css("display", "block");
-	jQuery('.gallery-content-insta-wall').css("display", "none");
-	jQuery('.gallery-content-flickr-wall').css("display", "none");
-	// upload photos change
-	jQuery('#image-gallery').css("display", "block");
-	jQuery('#instaram-gallery').css("display", "none");
-	jQuery('#flickr-gallery').css("display", "none");
-	//instagram configration 
-	jQuery('#instagram-configration').css("display", "none");
-}
-
-if(alw_gallery_wall == 'insta_wall') {
-	jQuery('.insta_wall').addClass("tab-active");
-	jQuery("div.photo_wall").removeClass("tab-active");
-	jQuery("div.flickr_wall").removeClass("tab-active");
-	 jQuery('.gallery-content-photo-wall').css("display", "none");
-	jQuery('.gallery-content-insta-wall').css("display", "block");
-	jQuery('.gallery-content-flickr-wall').css("display", "none");
-	// upload photos change
-	jQuery('#image-gallery').css("display", "none");
-	jQuery('#instaram-gallery').css("display", "block");
-	jQuery('#flickr-gallery').css("display", "none");
-	//instagram configration 
-	jQuery('#instagram-configration').css("display", "block");
-}
-	
-if(alw_gallery_wall == 'flickr_wall') {
-	jQuery('.flickr_wall').addClass("tab-active");
-	jQuery("div.photo_wall").removeClass("tab-active");
-	jQuery("div.insta_wall").removeClass("tab-active");
-	jQuery('.gallery-content-photo-wall').css("display", "none");
-	jQuery('.gallery-content-insta-wall').css("display", "none");
-	jQuery('.gallery-content-flickr-wall').css("display", "block");
-	// upload photos change
-	jQuery('#image-gallery').css("display", "none");
-	jQuery('#instaram-gallery').css("display", "none");
-	jQuery('#flickr-gallery').css("display", "block");
-	//instagram configration 
-	jQuery('#instagram-configration').css("display", "none");
-}
-	
-var alwselectedlayout = jQuery('[name=enable_gallery_layout]:checked').val();
-if(alwselectedlayout == 'grid') {
-	jQuery('.gallery_layout_grid').addClass('gallery_layout'); 
-	//hide show configuration setting according gallery layout
-	jQuery('.pw_grid_layout_config').show(); 
-	jQuery('.pw_masonry_mosaic_justify_layout_config').hide();
-} else {
-	jQuery('.gallery_layout_grid').removeClass('gallery_layout');
-	//jQuery('.alw_masonry_mosaic_justify_layout_config').show(); 			
-}
-	
-if(alwselectedlayout == 'masonry') {
-	jQuery('.gallery_layout_masonry').addClass('gallery_layout'); 
-	//hide show configuration setting according gallery layout
-	jQuery('.pw_grid_layout_config').hide(); 
-	jQuery('.pw_masonry_mosaic_justify_layout_config').show(); 
-	
-} else {
-	jQuery('.gallery_layout_masonry').removeClass('gallery_layout'); 
-}
-
-/* if(alwselectedlayout == 'mosaic') {
-	jQuery('.gallery_layout_mosaic').addClass('gallery_layout');
-	//hide show configuration setting according gallery layout
-	jQuery('.pw_grid_layout_config').hide(); 
-	jQuery('.pw_masonry_mosaic_justify_layout_config').show(); 
-} else {
-	jQuery('.gallery_layout_mosaic').removeClass('gallery_layout'); 
-}
-
-if(alwselectedlayout == 'justify') {
-	jQuery('.gallery_layout_justify').addClass('gallery_layout'); 
-	//hide show configuration setting according gallery layout
-	jQuery('.pw_grid_layout_config').hide(); 
-	jQuery('.pw_masonry_mosaic_justify_layout_config').show(); 
-} else {
-	jQuery('.gallery_layout_justify').removeClass('gallery_layout'); 
-} */
-
-var alw_load_more = jQuery('[name=alw_load_more]:checked').val();
-if(alw_load_more == 'yes') {
-	jQuery('.load_limit').show();
-} else {
-	jQuery('.load_limit').hide();
-}
-	
-var alw_gallery_wall = jQuery('[name=alw_gallery_wall]:checked').val();
-if(alw_gallery_wall == 'photo_wall') {
-	jQuery('.photo_wall').addClass("tab-active");
-	jQuery("div.insta_wall").removeClass("tab-active");
-	jQuery("div.flickr_wall").removeClass("tab-active");
-	jQuery('.gallery-content-photo-wall').css("display", "block");
-	jQuery('.gallery-content-insta-wall').css("display", "none");
-	jQuery('.gallery-content-flickr-wall').css("display", "none");
-	// upload photos change
-	jQuery('#image-gallery').css("display", "block");
-	jQuery('#instaram-gallery').css("display", "none");
-	jQuery('#flickr-gallery').css("display", "none");
-	//instagram configuration 
-	jQuery('#instagram-configration').css("display", "none");
-}
-
-if(alw_gallery_wall == 'insta_wall') {
-	jQuery('.insta_wall').addClass("tab-active");
-	jQuery("div.photo_wall").removeClass("tab-active");
-	jQuery("div.flickr_wall").removeClass("tab-active");
-	 jQuery('.gallery-content-photo-wall').css("display", "none");
-	jQuery('.gallery-content-insta-wall').css("display", "block");
-	jQuery('.gallery-content-flickr-wall').css("display", "none");
-	// upload photos change
-	jQuery('#image-gallery').css("display", "none");
-	jQuery('#instaram-gallery').css("display", "block");
-	jQuery('#flickr-gallery').css("display", "none");
-	//instagram configuration 
-	jQuery('#instagram-configration').css("display", "block");
-}
-
-if(alw_gallery_wall == 'flickr_wall') {
-	jQuery('.flickr_wall').addClass("tab-active");
-	jQuery("div.photo_wall").removeClass("tab-active");
-	jQuery("div.insta_wall").removeClass("tab-active");
-	jQuery('.gallery-content-photo-wall').css("display", "none");
-	jQuery('.gallery-content-insta-wall').css("display", "none");
-	jQuery('.gallery-content-flickr-wall').css("display", "block");
-	// upload photos change
-	jQuery('#image-gallery').css("display", "none");
-	jQuery('#instaram-gallery').css("display", "none");
-	jQuery('#flickr-gallery').css("display", "block");
-	//instagram configuration 
-	jQuery('#instagram-configration').css("display", "none");
-}
-	
-jQuery(document).ready(function() {
-	jQuery('input[type=radio][name=enable_gallery_layout]').change(function() {
-		var alwselectedlayout = jQuery('[name=enable_gallery_layout]:checked').val();
-		if(alwselectedlayout == 'grid') {
-			jQuery('.gallery_layout_grid').addClass('gallery_layout');
-			//hide show configuration setting according gallery layout
-			jQuery('.pw_grid_layout_config').show(); 
-			jQuery('.pw_masonry_mosaic_justify_layout_config').hide(); 
-				
-		} else {
-			jQuery('.gallery_layout_grid').removeClass('gallery_layout'); 
-		}
-		
-		if(alwselectedlayout == 'masonry') {
-			jQuery('.gallery_layout_masonry').addClass('gallery_layout'); 
-			//hide show configuration setting according gallery layout
-			jQuery('.pw_grid_layout_config').hide(); 
-			jQuery('.pw_masonry_mosaic_justify_layout_config').show(); 
-		} else {
-			jQuery('.gallery_layout_masonry').removeClass('gallery_layout'); 
-		}
-		
-		/* if(alwselectedlayout == 'mosaic') {
-			jQuery('.gallery_layout_mosaic').addClass('gallery_layout');
-			//hide show configuration setting according gallery layout
-			jQuery('.pw_grid_layout_config').hide(); 
-			jQuery('.pw_masonry_mosaic_justify_layout_config').show(); 
-					
-		} else {
-			jQuery('.gallery_layout_mosaic').removeClass('gallery_layout'); 
-		}
-		
-		if(alwselectedlayout == 'justify') {
-			jQuery('.gallery_layout_justify').addClass('gallery_layout'); 
-			//hide show configuration setting according gallery layout
-			jQuery('.pw_grid_layout_config').hide(); 
-			jQuery('.pw_masonry_mosaic_justify_layout_config').show(); 
-		
-		} else {
-			jQuery('.gallery_layout_justify').removeClass('gallery_layout'); 
-		}		 */
-	});
-	
-	// tab
-	jQuery("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
-		e.preventDefault();
-		jQuery(this).siblings('a.active').removeClass("active");
-		jQuery(this).addClass("active");
-		var index = jQuery(this).index();
-		jQuery("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
-		jQuery("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
-	});
-	
-	//load more hide show
-	jQuery('input[type=radio][name=alw_load_more]').change(function() {
-	var alw_load_more = jQuery('[name=alw_load_more]:checked').val();
-		if(alw_load_more == 'yes') {
-			jQuery('.load_limit').show();
-		} else {
-			jQuery('.load_limit').hide();
-		}
-	});
-		
-	jQuery('input[type=radio][name=alw_gallery_wall]').change(function() {
-		var alw_gallery_wall = jQuery('[name=alw_gallery_wall]:checked').val();
-		if(alw_gallery_wall == 'photo_wall') {
-			jQuery('.photo_wall').addClass("tab-active");
-			jQuery("div.insta_wall").removeClass("tab-active");
-			jQuery("div.flickr_wall").removeClass("tab-active");
-			jQuery('.gallery-content-photo-wall').css("display", "block");
-			jQuery('.gallery-content-insta-wall').css("display", "none");
-			jQuery('.gallery-content-flickr-wall').css("display", "none");
-			// upload photos change
-			jQuery('#image-gallery').css("display", "block");
-			jQuery('#instaram-gallery').css("display", "none");
-			jQuery('#flickr-gallery').css("display", "none");
-			//instagram configuration 
-			jQuery('#instagram-configration').css("display", "none");
-		}
-		
-		if(alw_gallery_wall == 'insta_wall') {
-			jQuery('.insta_wall').addClass("tab-active");
-			jQuery("div.photo_wall").removeClass("tab-active");
-			jQuery("div.flickr_wall").removeClass("tab-active");
-			jQuery('.gallery-content-photo-wall').css("display", "none");
-			jQuery('.gallery-content-insta-wall').css("display", "block");
-			jQuery('.gallery-content-flickr-wall').css("display", "none");
-			// upload photos change
-			jQuery('#image-gallery').css("display", "none");
-			jQuery('#instaram-gallery').css("display", "block");
-			jQuery('#flickr-gallery').css("display", "none");
-			//instagram configuration 
-			jQuery('#instagram-configration').css("display", "block");
-		}
-		
-		if(alw_gallery_wall == 'flickr_wall') {
-			jQuery('.flickr_wall').addClass("tab-active");
-			jQuery("div.photo_wall").removeClass("tab-active");
-			jQuery("div.insta_wall").removeClass("tab-active");
-			jQuery('.gallery-content-photo-wall').css("display", "none");
-			jQuery('.gallery-content-insta-wall').css("display", "none");
-			jQuery('.gallery-content-flickr-wall').css("display", "block");
-			// upload photos change
-			jQuery('#image-gallery').css("display", "none");
-			jQuery('#instaram-gallery').css("display", "none");
-			jQuery('#flickr-gallery').css("display", "block");
-			//instagram configuration 
-			jQuery('#instagram-configration').css("display", "none");
-		}
-	});	
-	
-	//color-picker
-		(function( jQuery ) {
-			jQuery(function() {
-			// Add Color Picker to all inputs that have 'color-field' class
-			jQuery('#alw_load_more_color').wpColorPicker();
-			});
-		})( jQuery );
-});
-</script>

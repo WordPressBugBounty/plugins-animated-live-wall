@@ -98,12 +98,9 @@ while ( $loop->have_posts() ) :
 				$photo_id = $flickr_data_res['id'];
 				?>
 				<div class="brick">
-					<a class='grid' target='<?php echo esc_attr( $alw_insta_link ); ?>' href='https://www.flickr.com/photos/<?php echo esc_attr( $alw_flickr_user_id ); ?>/<?php echo esc_attr( $photo_id ); ?>'>
-						<figure class='snip1467'><img src='<?php echo esc_url( $thumbnail_url ); ?>' width='100%'>
+					<a class='grid' target='<?php echo esc_attr( $alw_maso_img_redirection ); ?>' href='https://www.flickr.com/photos/<?php echo esc_attr( $alw_flickr_user_id ); ?>/<?php echo esc_attr( $photo_id ); ?>'>
+						<figure class='snip1467'><img src='<?php echo esc_url( $thumbnail_url ); ?>' width='100%' alt="<?php echo esc_attr( $photostream_title_fetch ); ?>">
 							<i class='pw-flickr fab fa-flickr'></i>
-							<!--<i class='pw-heart far fa-heart'>  </i>
-							<i class='pw-comment far fa-comment'>  </i>
-							<figcaption><p class='pw-caption'> ABC XYZ</p></figcaption>-->
 						</figure>
 					</a>
 				</div>

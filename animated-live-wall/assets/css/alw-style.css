@@ -1,3 +1,7 @@
+li.brick a {
+    background-size: cover !important;
+}
+
 .ri-grid{
 	margin: 30px auto 30px;
 	position: relative;
@@ -43,6 +47,13 @@
 	background: #000;
 }
 
+.ri-grid ul li img,
+.free-wall .brick img {
+	width: 100% !important;
+	height: 100%;
+	object-fit: cover;
+}
+
 .ri-grid ul li a{
 	display: block;
 	outline: none;
@@ -61,9 +72,9 @@
 	-o-transform-style: preserve-3d;
 	-ms-transform-style: preserve-3d;
 	transform-style: preserve-3d;
-	-webkit-background-size: 100% 100%;
-	-moz-background-size: 100% 100%;
-	background-size: 100% 100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-color: #333;

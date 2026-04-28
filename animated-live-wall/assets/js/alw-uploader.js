@@ -61,7 +61,8 @@ jQuery(function(jQuery) {
             };
             var data = {
                 action: 'alw_gallery_js',
-                imageId: id
+                imageId: id,
+                alw_nonce: alw_ajax_obj.nonce
             };
             jQuery.post(ajaxurl, data, function(response) {
                 awl_image_gallery.ul.append(response);

@@ -1,0 +1,15 @@
+/* Admin styles for Animated Live Wall */
+.pw-copy {
+    position: absolute;
+    top: 9px;
+    right: 24px;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+#pw-copt-code {
+    display: none;
+    color: #46b450;
+    font-weight: bold;
+    margin-top: 5px;
+}
